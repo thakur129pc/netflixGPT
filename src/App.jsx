@@ -1,9 +1,19 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
+import Login from "./components/Login";
 
 function App() {
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />,
+    },
+  ]);
   return (
     <>
-      <div className="text-3xl text-red-300">Tailwind Setup</div>
+      <div>
+        <RouterProvider router={appRouter} />
+      </div>
     </>
   );
 }
